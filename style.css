@@ -311,3 +311,11 @@ body {
 body {
     background: black !important;
 }
+
+.sub-category {
+    color: #e9c46a;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
