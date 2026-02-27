@@ -112,14 +112,29 @@
 
   <!-- PAPAD -->
   <h3 class="sub-category">Papad</h3>
-  <div class="menu-category">
+<div class="menu-category">
 
-    <div class="menu-item"><span>Roast Papad</span><span>—</span></div>
-    <div class="menu-item"><span>Fry Papad</span><span>—</span></div>
-    <div class="menu-item"><span>Butter Papad</span><span>—</span></div>
-    <div class="menu-item"><span>Masala Papad</span><span>—</span></div>
-
+  <div class="menu-item">
+    <span>Roast Papad</span>
+    <span>₹20</span>
   </div>
+
+  <div class="menu-item">
+    <span>Fry Papad</span>
+    <span>₹25</span>
+  </div>
+
+  <div class="menu-item">
+    <span>Butter Papad</span>
+    <span>₹25</span>
+  </div>
+
+  <div class="menu-item">
+    <span>Masala Papad</span>
+    <span>₹30</span>
+  </div>
+
+</div>
 
 </section>
 
@@ -433,5 +448,28 @@
 Thank you for dining with us
 </footer>
 
+  
+
+  <!-- Auto Sort Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+
+    document.querySelectorAll(".menu-category").forEach(category => {
+      
+      let items = Array.from(category.querySelectorAll(".menu-item"));
+
+      items.sort((a, b) => {
+        let priceA = parseInt(a.querySelector("span:last-child").innerText.replace("₹", ""));
+        let priceB = parseInt(b.querySelector("span:last-child").innerText.replace("₹", ""));
+        return priceA - priceB;
+      });
+
+      items.forEach(item => category.appendChild(item));
+    });
+
+  });
+  </script>
+
 </body>
 </html>
+
